@@ -184,7 +184,7 @@
 </template>
 
 <script>
-  import help from '../user/help'
+  import help from '../common/helpcenter'
   import oitdesc from '../wallet/oitdetail'
 
 
@@ -200,7 +200,6 @@
       }
     },
     mounted() {
-      debugger
       this.axios({
         method:'post',
         url:'/api/userDetail/oitTotal',

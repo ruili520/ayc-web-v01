@@ -1,51 +1,22 @@
+<!--个人详情页面-->
 <template>
   <div>
-    <van-nav-bar :title=title left-arrow @click-left="onClickLeft"/>
-    <ul class="list">
-      <li>
-        <p class="user-top">头像</p>
-        <div>
-          <img class="userimg" src="../../assets/img/userimg.png" alt="">
-          <img class="user-r" src="../../assets/img/youjiantou.png" alt="">
-        </div>
-      </li>
-      <li @click="upname()">
-        <p class="user-list">笔名</p>
-        <div>
-             <p>Angeta Brown</p>
-             <img class="user-r" src="../../assets/img/youjiantou.png" alt="">
-        </div>
-      </li>
-      <li @click="showDate()">
-        <p class="user-list">年龄</p>
-        <div>
-              <p><span>{{age}}</span>岁</p>
-             <img class="user-r" src="../../assets/img/youjiantou.png" alt="">
-        </div>
-      </li>
-      <li @click="showSex()">
-        <p class="user-list">性别</p>
-        <div>
-             <p>男</p>
-             <img class="user-r" src="../../assets/img/youjiantou.png" alt="">
-        </div>
-      </li>
-      <li @click="showArea()">
-        <p class="user-list">地区</p>
-        <div>
-             <p>上海</p>
-             <img class="user-r" src="../../assets/img/youjiantou.png" alt="">
-        </div>
-      </li>
-      <li>
-        <p class="user-list">个性签名</p>
-        <div>
-             <p>这里是签名哦~</p>
-             <img class="user-r" src="../../assets/img/youjiantou.png" alt="">
-        </div>
-      </li>
-    </ul>
-
+    <van-nav-bar
+      :title=title
+      left-arrow
+      @click-left="onClickLeft"
+    />
+    <van-cell-group>
+      <!--<van-cell title="头像" img="" is-link/>-->
+      <van-cell>
+        123
+      </van-cell>
+      <van-cell title="笔名" :value="userInfo.penName" is-link to="upname"/>
+      <van-cell title="年龄" value="18岁" is-link @click="showDate()"/>
+      <van-cell title="性别" :value="userInfo.sex==1?'男':'女'" is-link @click="showSex()"/>
+      <van-cell title="地区" :value="userInfo.province+userInfo.city" is-link @click="showArea()"/>
+      <van-cell title="个性签名" value="这是个性签名哦~" is-link to="upsign"/>
+    </van-cell-group>
 
     <!--修改信息弹出层-->
     <van-popup v-model="changeage" position="bottom">
@@ -59,7 +30,9 @@
       />
     </van-popup>
     <van-popup v-model="changearea" position="bottom">
-      <van-area :area-list="areaList" @confirm="areaonConfirm"/>
+      <van-area :area-list="areaList" :columns-num="2" value="110101" @confirm="areaonConfirm"/>
+      <!--<van-area show-toolbar title="选择地区"  :="sexList" @confirm="sexonConfirm"-->
+      <!--/>-->
     </van-popup>
   </div>
 </template>
@@ -68,13 +41,13 @@
   import areaList from '@/assets/js/area'
 
   export default {
-    name:'userdetails',
-    components:{
-
+    name: 'userdetails',
+    components: {
+      areaList
     },
-    data(){
-      return{
-        title:'编辑资料',
+    data() {
+      return {
+        title: '编辑资料',
         mobile: '',
         changeage: false,
         changesex: false,
@@ -84,82 +57,96 @@
         sexList: ['男', '女'],
         currentDate: new Date(),
         areaList: areaList,
+        province:'',
         city: '',
         age: '',
-        sex: ''
+        sex: '',
+        userInfo:[]
       }
+    },
+    mounted(){
+      this.axios({
+        method:'post',
+        url:'/api/userDetail/getUserInfo',
+        headers:{
+          token:'APP155166945394154'
+        },
+        data:{},
+      }).then(result=>{
+        console.log(result.data.data);
+        this.userInfo = result.data.data;
+      })
     },
     created() {
     },
-    mounted(){
-
-    },
-    methods:{
-      onClickLeft(){
-        this.$router.go(-1)
+    methods: {
+      onClickLeft() {
+        this.$router.back(-1);
       },
-      upname(){
-        this.$router.push('uppenname')
-      },
-      /*修改年龄*/
+      /*修改年龄,1.0版本没有年龄字段*/
       ageonConfirm(value) {//获取年龄
-        var age = parseInt(Math.floor(new Date() - new Date(parseTime(value))) / 30758400000);
-        var _this =this;
-        _this.age = age;
-        _this.AycAxios('/api/userDetail/updateUser',{
+        /*var age = parseInt(Math.floor(new Date() - new Date(parseTime(value))) / 30758400000);
+        this.age = age;
+        this.axios({
           method: 'post',
-          headers:{
-            token:localStorage.getItem('token')
-          },
-          data: {
-            age: _this.age
-          }
-        },function (data) {
-          _this.$toast('年龄修改成功');
-          _this.changeage = false;
-        })
-      },
-      /*修改性别*/
-      sexonConfirm(value) {//获取性别
-        var sex = value;
-        var _this =this;
-        _this.sex = sex;
-        _this.AycAxios('/api/userDetail/updateUser', {
-          method: 'post',
-          headers:{
-            token:localStorage.getItem('token')
-          },
-          data: {
-            sex: _this.sex=='女'?2:1,
-          }
-        },function (data) {
-          _this.$toast('性别修改成功')
-        })
-      },
-      /*修改地区*/
-      areaonConfirm(value) {//获取地区
-        var _this =this;
-        var jsonData = JSON.stringify(value);// 转成JSON格式
-        var item = JSON.parse(jsonData);//转换成对象
-        var sum = "";
-        item.forEach((item) => {
-          sum += item.name;
-        });
-        _this.city = sum;
-        _this.AycAxios('/api/userDetail/updateUser',{
-          method: 'post',
+          url: '/api/userDetail/updateUser',
           headers:{
             token:'APP155135365642127'
           },
           data: {
-            city: _this.city,
-            id:'56141'
+            age: this.age
           }
-        },function() {
-          _this.$toast('地区修改成功')
+        }).then(result => {
+          if (result.data.code=="100000"){
+            this.changeage = false;
+            this.$router.push('/userdetails');
+          }
+        })*/
+      },
+      /*修改性别*/
+      sexonConfirm(value) {//获取性别
+        var sex = value;
+        this.sex = sex;
+        this.axios({
+          method: 'post',
+          url: '/api/userDetail/updateUser',
+          headers:{
+            token:'APP155166945394154'
+          },
+          data: {
+            sex: this.sex=='女'?2:1
+          }
+        }).then(result => {
+          console.log(result.data.code);
+          if (result.data.code=="100000"){
+            this.$router.go(0);
+          }
         })
       },
-
+      /*修改地区*/
+      areaonConfirm(value) {//获取地区
+        console.log(value);
+        var jsonData = JSON.stringify(value);// 转成JSON格式
+        var item = JSON.parse(jsonData);//转换成对象
+        this.province = item[0].name;
+        this.city = item[1].name;
+        this.axios({
+          method: 'post',
+          url: '/api/userDetail/updateUser',
+          headers:{
+            token:'APP155166945394154'
+          },
+          data: {
+            province:this.province,
+            city: this.city
+          }
+        }).then(result => {
+          console.log(result.data.code);
+          if (result.data.code=='100000'){
+            this.$router.go(0);
+          }
+        })
+      },
       showDate() {
         if (!this.changeage) {
           this.changeage = true;
@@ -190,9 +177,8 @@
           return `${value}日`
         }
         return value;
-      },
-
-    },
+      }
+    }
   }
 
   /*格式化时间类型*/
@@ -201,7 +187,8 @@
       + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
     return newDate;
   }
+
 </script>
 <style lang="less">
-  @import "../../assets/css/details.css";
+  @import "../../assets/css/login.css";
 </style>
