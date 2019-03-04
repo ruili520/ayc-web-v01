@@ -1,0 +1,80 @@
+.head {
+    padding: 4.2667vw;
+    font-size: 4.2667vw;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .head img {
+    width: 3.6667vw;
+    height: 5.2667vw;
+  }
+  .head h1 {
+    margin: 0 auto;
+    font-size: 4.2667vw;
+    font-weight: bold;
+  }
+  .comment{
+    padding: 4.2667vw;
+}
+.comment h2{
+    font-weight: bold;
+    color: #3c414b;
+    font-size: 4.2667vw;
+}
+.comment-2{
+    padding: 4.2667vw 0;
+    border-bottom: 0.5333vw solid #fbfcfd;
+}
+.comment-img{
+    width: 8vw;
+    height: 8vw;
+    padding: 3.2vw;
+}
+.comment-cont{
+    display: flex;
+    justify-items: flex-start;
+    position: relative;
+}
+.readername{
+    font-size: 3.2vw;
+    color: #aaaeb9;
+}
+.readercont{
+    font-size: 3.7333vw;
+    padding:1.7333vw 0;
+    font-weight: bold;
+}
+.readeritme{
+    font-size: 2.6667vw;
+    color: #cdcfd4;
+}
+.praise span{
+    font-size: 2.6667vw;
+    color: #7e8490;
+    position: relative;
+    left: 9.6667vw;
+}
+.praise img{
+    width: 2.6667vw;
+    height: 2.6667vw;
+    position: relative;
+    left: 9.6667vw;
+}
+.reply{
+    margin-top:5.6667vw;
+    font-size: 2.6667vw;
+    color: #cdcfd4;
+}
+.reply p{
+    font-size: 2.6667vw;
+    padding: 1.0667vw 2.6667vw;
+    background: #f6f7f9;
+    color: #b2b7c0;
+}
+.quantity span{
+    font-size: 4.3333vw;
+    position: relative;
+    left: 7.8vw;
+    color: red;
+    font-weight: bold;
+}

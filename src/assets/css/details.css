@@ -1,0 +1,59 @@
+.navCon{
+    display: flex;
+    justify-content:start;
+    padding-top: 4.8vw;
+}
+.navCon img{
+    width: 2.6667vw;
+    height: 4.5333vw;
+    padding-left: 4.2667vw;
+}
+.navCon h1{
+    font-size: 4.5333vw;
+    color: #4c5059;
+    font-weight: bold;
+    line-height: 4.5333vw;
+    padding-left: 33.3333vw;
+}
+.Heade{
+    padding-top: 10.6667vw;
+    display: flex;
+    justify-content: space-between;
+}
+.list{
+    padding: 4.2667vw;
+}
+.list li{
+    display: flex;
+    justify-content: space-between;
+    padding:5.3333vw 0;
+    border-bottom: 0.2667vw solid #f6f7f9;
+}
+.list li div{
+    display: flex;
+    justify-content: space-between;
+}
+.userimg{
+    width: 10.6667vw;
+    height: 10.6667vw;
+    padding: 0 2.6667vw;
+}
+.user-r{
+    width: 1.6vw;
+    height: 2.6667vw;
+    padding: 3.6667vw 0;
+}
+.user-top{
+    line-height: 10.6667vw;
+}
+.user-list{
+    font-size: 4vw;
+    font-weight: bold;
+    line-height: 9.6667vw;
+}
+.list li div p{
+    padding: 0 2.6667vw;
+    line-height: 9.6667vw;
+    font-size: 2.6667vw;
+    color: #d8dadf;
+}

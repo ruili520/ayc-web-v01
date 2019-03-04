@@ -1,0 +1,76 @@
+body{
+    background: #f9f9f9;
+}
+.head{
+    width: 100%;
+    height: 53.3333vw;
+}
+.head img{
+    width: 100%;
+    height: 100%;
+}
+.user{
+    margin:4.2667vw;
+    position: relative;
+    background: #ffffff;
+    top: -26.6667vw;
+    zoom: 1;
+    border-radius: 2.6667vw;
+}
+.user-top{
+    display: flex;
+    justify-content: flex-start;
+}
+.user-top h1{
+    font-size: 4.8vw;
+    font-weight: bold;
+    padding: 0.5333vw;
+}
+.userimg{
+    width: 18.6667vw;
+    height: 18.6667vw;
+    border-radius: 50%;
+    padding: 2.2667vw;
+    margin-top:-11.8vw;
+}
+.gender{
+    width: 4vw;
+    height: 4vw;
+    padding: 5.5333vw 2vw;
+}
+.user-bottom{
+    display: flex;
+    justify-content: space-between;
+    padding: 3.2vw;
+}
+.author{
+    width: 8.8vw;
+    height: 8.8vw;
+}
+.r{
+    width: 1.8667vw;
+    height: 2.6667vw;
+}
+.user-r{
+    margin-left: -17.6667vw;
+}
+.user-r p{
+    width: 44.3333vw;
+    font-size: 2.6667vw;
+    color: #838894;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:2;
+    overflow: hidden;
+}
+.user-r span{
+    font-size: 3.2vw;
+    color: #8e939e;
+}
+.user-img{
+    padding: 0 4.6667vw;
+}
+.user-img p{
+    color: #ff9da2;
+    font-size: 2.6667vw;
+}

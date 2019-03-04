@@ -1,0 +1,273 @@
+.complete{
+    width: 100%;
+    background: #f9f9f9;
+    margin-bottom: 11.7333vw;
+}
+.head{
+    height: 58vw;
+    background-image: url(../img/qianbaodaohanglan.png);
+    background-size: 100%;
+    padding: 4.2667vw;
+}
+.head-top div{
+    font-size: 3.2vw;
+    line-height: 3vw;
+    height: 8vw;
+}
+.head-top{
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+.head-top img{
+    width: 4vw;
+    height: 4vw;
+    position: relative;
+    top: 0.5333vw; 
+}
+.head-r{
+    position: relative;
+    top: 1.5333vw;
+}
+.head h1{
+    font-size:4.2667vw;
+    height: 8vw; 
+}
+/* 头部 */
+.aggregate{
+    padding-top:8vw;
+    display: flex;
+    justify-content: center;
+}
+.out{
+    background: #35beff;
+    padding: 5.3333vw;
+    color: #fff;
+    font-size: 5.3333vw;
+}
+.hexagon{
+    width: 5.8667vw;
+    height: 8vw;
+}
+.aggregate-bottom{
+    display: flex;
+    justify-content: center;
+    font-size: 3.7333vw;
+    color: #fff;
+    padding: 5.3333vw;
+}
+/* 资产 */
+.freeze{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 3.2vw;
+    height: 13.3333vw;
+}
+.blocking{
+    margin: -21.2667vw 4.2667vw 4.2667vw 4.2667vw;
+    background: #fff;
+    border-radius: 2.3333vw;
+}
+.blocking h2{
+    font-size: 4.2667vw;
+    padding:3.2vw;
+    font-weight: bold;
+}
+.query{
+    height: 5.3333vw;
+    position: relative;
+    top: 2.6667vw;
+    font-size:3.2vw; 
+}
+.query img{
+    width: 4vw;
+    height: 4vw;
+    position: relative;
+    top: 1vw;
+}
+.dong{
+    padding-top:2.1333vw; 
+}
+.gai{
+    margin: 4.2667vw;
+}
+/* d冻结 */
+.xiao{
+    font-size: 3.7333vw;
+    line-height: 7.9333vw;
+    padding-left:1.3333vw;
+    color: #b4b8be;
+}
+.da{
+    font-size: 5.8667vw;
+    padding-left:1.3333vw; 
+    font-weight: bold;
+}
+.c{
+    color: #fff;
+}
+.exchange{
+    position: relative;
+    left: 23.6667vw;
+    bottom: 1.6667vw;
+    font-size: 3.7333vw;
+    display: inline-block;
+    padding: 2.6667vw 9.3333vw;
+    background: #f4f8ff;
+    color: #c5cddb;
+}
+.circle{
+    border-bottom-left-radius: 6vw;
+    border-top-left-radius: 6vw;
+    border-bottom-right-radius: 6vw;
+    border-top-right-radius: 6vw;
+}
+.parities img{
+    width: 4.5333vw;
+    height: 3.4667vw;
+}
+.parities{
+    width: 25.3333vw;
+    font-size: 2.9333vw;
+    margin: 3.7333vw;
+    padding: 1.6667vw 9.3333vw; 
+    background: #f4f8ff;
+    color: #a2e1ff;
+}
+.release{
+    display: flex;
+    justify-content: flex-start;
+}
+.present{
+    font-size: 2.6667vw;
+    color:#b6bac3;
+    padding-top:5.6667vw; 
+}
+/* 汇率 */
+.querys{
+    position: relative;
+    top: -8.6667vw;
+}
+.ex{
+    left: 32.6667vw;
+    bottom: 1.6667vw;
+    background: #00b7ff;
+    color: #fff;
+}
+.yuan{
+    color: #000;
+    font-weight: bold;
+}
+/* 提现 */
+.sign{
+    margin: 4.2667vw;
+    background: #fff;
+    border-radius: 2.3333vw;
+}
+.sign li{
+    display: flex;
+    justify-content: space-between;
+    padding: 4.2667vw;
+    /* border-bottom: 2px solid; */
+    position: relative;
+}
+.sign-in{
+    display: flex;
+    justify-items: flex-start;
+    width: 51.4667vw;
+}
+.sign h2{
+    font-size: 4.2667vw;
+    padding:3.2vw;
+    font-weight: bold;
+}
+.sign-in img{
+    width: 4.2667vw;
+    height: 4.2667vw;
+    padding-top: 0.5333vw;
+}
+.everyday{
+    font-size: 4.2667vw;
+    padding-left: 1.3333vw;
+}
+.zhong{
+    height: 5.3333vw;
+    padding:0.6667vw 2.3333vw;
+    background: #f4f8ff;
+    color: #dae0ec;
+    line-height:5.3333vw;
+    font-size: 2.9333vw; 
+}
+.wire{
+    position: absolute;
+    bottom: 0;
+    right: 4.2667vw;
+    width: 77.3333vw;
+    height: 0.2667vw;
+    background: #f6f7f9;
+}
+.little{
+    height: 5.3333vw;
+    padding:0.6667vw 4.3333vw;
+    background: #e5f7ff;
+    color: #0eb4ff;
+    line-height:5.3333vw;
+    font-size: 2.9333vw; 
+}
+.everyday-s{
+    width: 59vw;
+}
+.txiao{
+    font-size: 2.6667vw;
+    padding-left: 0.3333vw;
+}
+.tabbar{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 13.3333vw;
+    background: #fff;
+    box-shadow:  0 -1.0667vw 5.8667vw #f5f5f7;
+}
+.tabbar ul{
+    display: flex;
+    justify-content: space-between;
+}
+.tabbar li{
+    width: 33%;
+    text-align: center;
+}
+.toc{
+    width: 15.3333vw;
+    height: 7.6vw;
+    border: 0.2667vw solid #00b0ff;
+    border-radius: 29%;
+    text-align: center;
+    line-height: 7.6vw;
+    color: #00b0ff;
+    margin: 6.5333vw 3.2vw 0 0;
+    font-size: 3.8vw;
+}
+.xiao1 img{
+    width: 5.8667vw;
+    height: 5.8667vw;
+    margin: 1.6vw 0 0 0;
+}
+.xiao1 p{
+    margin-top:-1.3333vw;
+    font-size:3.2vw;
+    color: #acb0bb;
+}
+.da img{
+    position: relative;
+    top: -6.6667vw;
+    width: 13.3333vw;
+    height: 13.3333vw;
+}
+.da p{
+    margin-top:-7.3333vw;
+    font-size:3.2vw;
+    color: #acb0bb;
+}
+
